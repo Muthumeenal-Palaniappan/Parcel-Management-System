@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript">
+       
+        function AddUserDetail() {
+            jQuery.support.cors = true;
+            var userDetail = {
+                UserId: $('#txtUserId').val(),
+                UserPassword: $('#txtUserPassword').val(),
+                FirstName: $('#txtaddEmpName').val(),
+                LastName: $('#txtaddEmpDep').val(),
+                Email: $('#txtEmail').val(),
+                Address: $('#txtAddress').val(),
+                Phone: $('#txtPhone').val()
+            };
+            $.ajax({
+                url: 'http://localhost:50755/api/UserDetail',
+                type: 'Post',
+                data: JSON.stringify(userDetail),
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                    alert('success');
+                    WriteResponse(data);
+                },
+                error: function (x, y, z) {
+                    alert('error');
+                    alert(x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <table>
+            <tr><td>UserId:</td><td><input type="text" id="txtUserid" /></td></tr>
+            <tr><td>Password</td><td><input type="password" id="txtUserPassword" /></td></tr>
+            <tr><td>First Name:</td><td><input type="text" id="txtFirstName" /></td></tr>
+            <tr> <td>Last Name:</td><td><input type="text" id="txtLastName" /></td></tr>
+            <tr><td>Email:</td><td><input type="email" id="txtEmail" /></td></tr>
+            <tr><td>Address:</td><td><input type="text" id="txtAddress"/></td></tr>
+            <tr><td>Phone:</td><td><input type="tel" id="txtPhone" /></td></tr>
+           
+        </table>
+        <button onclick="AddUserDetail(); return false;" >Save Details</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="20211e6d00654b17b0d6d9c04c951757" Name="Diagram1" ZoomLevel="65">
+        <EntityTypeShape EntityType="ParcelMgmntSysModel.FranchiseRate" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParcelMgmntSysModel.Parcel" Width="1.5" PointX="3.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParcelMgmntSysModel.ShippingAddress" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParcelMgmntSysModel.sysdiagram" Width="1.5" PointX="8.125" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParcelMgmntSysModel.UserDetail" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="ParcelMgmntSysModel.fk_Parcel_FranchiseRates" ManuallyRouted="false" />
+        <AssociationConnector Association="ParcelMgmntSysModel.fk_Parcel_UserDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="ParcelMgmntSysModel.fk_ShippingAddress_Parcel" ManuallyRouted="false" />
+        <AssociationConnector Association="ParcelMgmntSysModel.fk_ShippingAddress_UserDetails" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
