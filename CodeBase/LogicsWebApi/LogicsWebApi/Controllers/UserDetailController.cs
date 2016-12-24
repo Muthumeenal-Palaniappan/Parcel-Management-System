@@ -20,13 +20,13 @@ namespace LogicsWebApi.Controllers
             this.userDetailRepo = new UserDetailRepo();
         }
         // GET: api/UserDetail
-        [HttpGet]
+        public IEnumerable<UserDetail> Get()
+        {
+                       return userDetailRepo.GetUserDetails();
+        }
         public dynamic Get(string sidx, string sord, int page, int rows)
         {
-            //        var userDetails = userDetailRepo.GetUserDetails().Select(i =>
-            //new { i.UserId, i.FirstName });
-
-            //        return userDetails;
+           
             var userDetails = userDetailRepo.GetUserDetails() as IEnumerable<UserDetail>;
             var pageIndex = Convert.ToInt32(page) - 1;
             var pageSize = rows;
@@ -65,7 +65,7 @@ namespace LogicsWebApi.Controllers
         }
 
         // POST: api/UserDetail
-        public HttpResponseMessage Post([FromBody]UserDetail userDetail)
+        public HttpResponseMessage Post(UserDetail userDetail)
         {
            
             //    UserDetail userDetailObj = new UserDetail() { FirstName = value.FirstName, LastName = value.LastName, email = value.email, Address = value.Address, Phone = value.Phone, UserId = new Guid(); };
@@ -79,7 +79,7 @@ namespace LogicsWebApi.Controllers
         }
 
         // PUT: api/UserDetail/5
-        public void Put([FromBody]UserDetail userDetail)
+        public void Put(UserDetail userDetail)
 
         {
             userDetailRepo.UpadateUserDetail(userDetail);
